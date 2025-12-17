@@ -1,0 +1,253 @@
+<Program> -> <Statement List>
+<Statement List> -> <Statement> <Statement List> | ε
+Token: separator       Lexeme: $$
+Token: separator       Lexeme: $$
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Declaration> -> <Qualifier> <IDs> ;
+<Qualifier> -> integer | boolean
+Token: keyword         Lexeme: boolean
+<IDs> -> <Identifier> <IDsPrime>
+Token: identifier      Lexeme: flag
+<IDsPrime> -> , <Identifier> <IDsPrime> | ε
+<IDsPrime> -> ε
+Token: separator       Lexeme: ;
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Declaration> -> <Qualifier> <IDs> ;
+<Qualifier> -> integer | boolean
+Token: keyword         Lexeme: integer
+<IDs> -> <Identifier> <IDsPrime>
+Token: identifier      Lexeme: one
+<IDsPrime> -> , <Identifier> <IDsPrime> | ε
+Token: separator       Lexeme: ,
+Token: identifier      Lexeme: car
+<IDsPrime> -> , <Identifier> <IDsPrime> | ε
+<IDsPrime> -> ε
+Token: separator       Lexeme: ;
+Token: separator       Lexeme: $$
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<While> -> while ( <Condition> ) <Statement List> endwhile
+Token: keyword         Lexeme: while
+Token: separator       Lexeme: (
+<Condition> -> <Expression> <Relop> <Expression>
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 1
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+<Relop> -> == | != | > | < | <= | =>
+Token: operator        Lexeme: <
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 50
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+Token: separator       Lexeme: )
+<Compound> -> { <Statement List> }
+Token: separator       Lexeme: {
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Assign> -> <Identifier> = <Expression> ;
+Token: identifier      Lexeme: one
+Token: operator        Lexeme: =
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 1
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+Token: separator       Lexeme: ;
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Assign> -> <Identifier> = <Expression> ;
+Token: identifier      Lexeme: one
+Token: operator        Lexeme: =
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 2
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+Token: separator       Lexeme: ;
+Token: separator       Lexeme: }
+Token: keyword         Lexeme: endwhile
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Assign> -> <Identifier> = <Expression> ;
+Token: identifier      Lexeme: flag
+Token: operator        Lexeme: =
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 1
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+Token: separator       Lexeme: ;
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Assign> -> <Identifier> = <Expression> ;
+Token: identifier      Lexeme: car
+Token: operator        Lexeme: =
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 1
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+Token: operator        Lexeme: +
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 4
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+Token: separator       Lexeme: ;
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<If> -> if ( <Condition> ) <Statement> <IfPrime>
+Token: keyword         Lexeme: if
+Token: separator       Lexeme: (
+<Condition> -> <Expression> <Relop> <Expression>
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: identifier      Lexeme: one
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+<Relop> -> == | != | > | < | <= | =>
+Token: operator        Lexeme: <=
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 1
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+Token: separator       Lexeme: )
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Compound> -> { <Statement List> }
+Token: separator       Lexeme: {
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Assign> -> <Identifier> = <Expression> ;
+Token: identifier      Lexeme: one
+Token: operator        Lexeme: =
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 1
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+Token: separator       Lexeme: ;
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Assign> -> <Identifier> = <Expression> ;
+Token: identifier      Lexeme: one
+Token: operator        Lexeme: =
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 2
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+Token: separator       Lexeme: ;
+Token: separator       Lexeme: }
+<IfPrime> -> else <Statement> endif | endif
+Token: keyword         Lexeme: else
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Compound> -> { <Statement List> }
+Token: separator       Lexeme: {
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Assign> -> <Identifier> = <Expression> ;
+Token: identifier      Lexeme: car
+Token: operator        Lexeme: =
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 2
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+Token: operator        Lexeme: *
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 4
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+Token: operator        Lexeme: /
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: identifier      Lexeme: one
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+Token: separator       Lexeme: ;
+<Statement> -> <Compound> | <Assign> | <If> | <Return> | <Print> | <Scan> | <While> | <Declaration>
+<Assign> -> <Identifier> = <Expression> ;
+Token: identifier      Lexeme: car
+Token: operator        Lexeme: =
+<Expression> -> <Term> <ExpressionPrime>
+<Term> -> <Factor> <TermPrime>
+<Factor> -> <Identifier> | <Number> | ( <Expression> ) | <Function Call>
+Token: integer         Lexeme: 2
+<TermPrime> -> * <Factor> <TermPrime> | / <Factor> <TermPrime> | ε
+<TermPrime> -> ε
+<ExpressionPrime> -> + <Term> <ExpressionPrime> | - <Term> <ExpressionPrime> | ε
+<ExpressionPrime> -> ε
+Token: separator       Lexeme: ;
+Token: separator       Lexeme: }
+Token: keyword         Lexeme: endif
+Token: separator       Lexeme: $$
+
+Symbol Table:
+Identifier          MemoryLocation      Type
+flag                10000               boolean             
+one                 10001               integer             
+car                 10002               integer             
+
+Assembly Code Listing:
+1          LABEL
+2          PUSHI     1
+3          PUSHI     50
+4          LES
+5          JMP0      11
+6          PUSHI     1
+7          POPM      10001
+8          PUSHI     2
+9          POPM      10001
+10         JMP       1
+11         LABEL
+12         PUSHI     1
+13         POPM      10000
+14         PUSHI     1
+15         PUSHI     4
+16         A
+17         POPM      10002
+18         PUSHM     10001
+19         PUSHI     1
+20         LEQ
+21         JMP0      27
+22         PUSHI     1
+23         POPM      10001
+24         PUSHI     2
+25         POPM      10001
+26         JMP       36
+27         LABEL
+28         PUSHI     2
+29         PUSHI     4
+30         M
+31         PUSHM     10001
+32         D
+33         POPM      10002
+34         PUSHI     2
+35         POPM      10002
+36         LABEL

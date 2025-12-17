@@ -1,0 +1,9 @@
+$$
+[* No function defs *]
+$$
+   integer fahr;
+   integer fahrOne;
+$$
+   print(fahr + fahrOne);
+   while (fahr => 2)  fahr = 40; endwhile [* test comment *]
+$$

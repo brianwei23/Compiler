@@ -1,0 +1,26 @@
+$$ 
+[* No func definitions *] 
+$$    
+boolean flag;   
+integer one, car;
+$$    
+while (1 < 50)
+{
+   one = 1;
+   one = 2;
+}
+endwhile
+flag = 1;
+car = 1 + 4;   
+if(one <= 1)
+{
+   one = 1;
+   one = 2;
+}
+else
+{
+   car = 2 * 4 / one;
+   car = 2;
+}
+endif
+$$   
